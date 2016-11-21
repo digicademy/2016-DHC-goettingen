@@ -6,7 +6,7 @@
 
 Description
 
-The code of this presentation is at https://github.com/digicademy/impress-js-boilerplate
+The code of this presentation is at https://github.com/digicademy/2016-DHC-goettingen
 
 A live demo can be found at http://digicademy.github.io/impress-js-boilerplate/ 
 
