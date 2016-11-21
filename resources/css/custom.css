@@ -1,0 +1,42 @@
+/*
+#########################################################
+IMPRESS.JS CUSTOM STYLES
+#########################################################
+*/
+
+/* ### LINKS ###### */
+
+body a {
+	font-weight: normal;
+}
+
+/* ### IMAGES ###### */
+
+/* changed from normalize-4.1.1.css: margin: 1em 40px; */
+
+figure {
+	margin: 0;
+}
+
+/* ### LISTS ###### */
+
+
+ul li {
+	line-height: 1.3em;
+}
+
+/* instead of margin-left: 1em; */
+
+ul li:before {
+	margin-left: -0.4em;
+}
+
+/* Individual slides */
+
+#step-1 h1 {
+	font-size: 80px;
+}
+
+#step-1 h2 {
+	font-size: 46px;
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIDOC CRM-based modeling of archaeological catalogue data</title>
+
+    <!-- meta information -->
+    <meta name="author" content="Aline Deicke" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- styles for included libraries -->
+
+    <!-- chartist -->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="fallback-message">
+        <p>
+            Your browser <strong>doesn't support the features required</strong> by impress.mod.js,
+            so you are presented with a simplified version of this presentation.
+        </p>
+        <p>
+            For the best experience please use the latest <strong>Chrome</strong>, <strong>Safari</strong>
+            or <strong>Firefox</strong> browser.
+        </p>
+    </div>
+
+    <div id="impress">
+
+        <div class="step">
+            <h4><strong>22.11.2016</strong> | Universitätsbibliothek Göttingen</h4>
+            <h4 style="margin-top: -15px"><strong><a href="http://www.mtsr-conf.org/index.php/workshops-2016">DHC 2016: Digital Humanities and Digital Curation</a></strong></h4>
+
+            <h1 class="down-100">CIDOC CRM-based modeling</h1>
+            <h2 class="red up-25">of archaeological catalogue data</h2>
+
+            <h4 class="down-100">
+                <strong>Slides:</strong>
+                <a href="#" title="View the presentation online">
+                    Link
+                </a>
+            </h4>
+
+            <h5>
+                <strong><a href="http://www.adwmainz.de/mitarbeiter/profil/aline-deicke.html">Aline Deicke</a></strong> |
+                <img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                <a href="https://twitter.com/digicademy" title="Digital Academy on Twitter">@digicademy</a> |
+                <img src="resources/img/Octicons-mark-github.svg" alt="Twitter" class="gh-icon" />
+                <a href="https://github.com/digicademy/" title="Digital Academy on GitHub">digicademy</a> |
+                <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+            </h5>
+        </div>
+
+        <div class="step">
+            <h2>Table of Contents</h2>
+            <ol class="line-height-one-five">
+                <li>
+                    Introduction
+                </li>
+                <li>
+                    Archaeological catalogues
+                </li>
+                <li>
+                    Exemplary data model for archaeological catalogue data
+                </li>
+	            <li>
+		            Conclusions and Outlook
+	            </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h1 class="red">01</h1>
+            <h2 class="line-height-one-five">
+                Introduction
+            </h2>
+        </div>
+
+	    <div class="step">
+
+		    <h2>The CIDOC CRM</h2>
+
+		    <ul>
+			    <li>Internationally recognized standard for the description of concepts from the field of cultural heritage</li>
+			    <li>Developed by the <a href="http://network.icom.museum/cidoc/">Documentation Standards Group (CIDOC)</a> of the <a href="http://icom.museum/">Internation Council of Museums (ICOM)</a>
+			    </li>
+			    <li>1996: shift from E-R-model to object-oriented conceptual reference model</li>
+			    <li>2000-2006: Development into ISO standard (<a href="http://www.iso.org/iso/catalogue_detail?csnumber=57832">ISO 21127</a>)</li>
+			    <li>Last official release: <a href="http://new.cidoc-crm.org/get-last-official-release">Version 5.0.4</a></li>
+		    </ul>
+
+	    </div>
+
+	    <div class="step">
+		    <h2>The CRM, archaeology and LOD</h2>
+
+		    <div class="row">
+
+			    <div class="six columns">
+				    <figure class="mfp-lightbox">
+					    <a href="resources/img/gawd.png">
+						    <img src="resources/img/gawd.png">
+					    </a>
+					    <figcaption class="x-small down-25"><a href="http://bsa.biblio.univ-lille3.fr/doc/gawd/gawd.html">Robineau, R.: Graph of Ancient World Data (2012)</a></figcaption>
+				    </figure>
+			    </div>
+
+			    <div class="six columns">
+
+				    <ul class="medium">
+					    <li>Growing importance of LOD and semantic mark-up in archaeology</li>
+					    <li>Some projects:
+						    <ul>
+							    <li><a href="http://www.ariadne-infrastructure.eu/">ARIADNE</a></li>
+							    <li><a href="http://labs.europeana.eu/api/linked-open-data-introduction">europeana</a></li>
+							    <li><a href="http://commons.pelagios.org/">Pelagios Commons</a></li>
+							    <li><a href="http://hypermedia.research.southwales.ac.uk/kos/star/">STAR</a>, <a href="http://hypermedia.research.southwales.ac.uk/kos/STELLAR/">STELLAR</a>, <a href="http://data.archaeologydataservice.ac.uk/page/">ADS Linked Data repository</a>, <a href="https://crmeh.wordpress.com/">CIDOC CRM-EH</a></li>
+							    <li><a href="https://github.com/wxwilcke/pakbon-ld">pakbon-ld</a>, <a href="https://dans.knaw.nl/nl">DANS</a> and <a href="https://easy.dans.knaw.nl/ui/home">EASY</a></li>
+							    <li><a href="http://www.dainst.org/de/forschung/forschung-digital/idai.welt">idai.welt</a> (projects of the <a href="http://www.dainst.org/dai/meldungen">German Archaeological Institute [DAI]</a>)</li>
+								<li><a href="http://erlangen-crm.org/">Erlangen CRM / OWL</a></li>
+							    <li>and many more ...</li>
+						    </ul>
+					    </li>
+				    </ul>
+			    </div>
+
+		    </div>
+	    </div>
+
+	    <div class="step">
+		    <h1 class="red">02</h1>
+		    <h2 class="line-height-one-five">
+			    Archaeological Catalogues
+		    </h2>
+	    </div>
+
+	    <div class="step">
+		    <h2>Scope of the CIDOC CRM</h2>
+
+		    <blockquote>
+			    The overall scope of the CIDOC CRM can be summarised [...] as the curated knowledge of museums.
+		    </blockquote>
+
+		    <h3 class="down-50">Intended Scope</h3>
+		    <blockquote>[A]ll information required for the exchange and integration of heterogeneous scientific documentation of museum collection.</blockquote>
+
+		    <p class="medium down-50">(<a href="http://new.cidoc-crm.org/get-last-official-release">CIDOC CRM Version 5.0.4</a>)</p>
+	    </div>
+	    
+	    <div class="step">
+		    <h2>Example of an extended model: CIDOC CRM-EH</h2>
+		    
+		    <figure class="mfp-lightbox">
+			    <a href="resources/img/CRM-EH.png"><img style="width: 75%" src="resources/img/CRM-EH.png"></a>
+			    <figcaption class="x-small"><a href="https://crmeh.files.wordpress.com/2011/10/arch_ontological_modellingv4.pdf">crmeh.wordpress.com</a></figcaption>
+		    </figure>
+	    </div>
+	    
+	    <div class="step">
+		    
+		    <h2>Archaeological catalogue data</h2>
+		    
+		    <div class="row">
+			    <div class="four columns">
+
+				    <figure>
+					    <img style="width: 60%;" src="resources/img/fdaeb-I-nr7-taf.png">
+				    </figure>
+
+			    </div>
+
+			    <div class="eight columns">
+				    <figure>
+					    <img style="width: 60%;" src="resources/img/fdaeb-I-nr7-text.png">
+				    </figure>
+
+				    <p class="x-small down-25">E. Aner/K. Kersten, Frederiksborg und Københavns Amt. Die Funder der älteren Bronzezeit des nordischen Kreises in Dänemark, Schleswig-Holstein und Niedersachsen 1 (København/Neumünster 1973) 5; Taf. 1,7.</p>
+			    </div>
+
+		    </div>
+		    
+	    </div>
+
+	    <div class="step">
+
+		    <h2>Enrichment through further research</h2>
+
+		    <ul>
+			    <li>Typological classification</li>
+			    <li>Chronological classification</li>
+			    <li>Bibliographical references</li>
+			    <li>Further research results</li>
+			    <li>...</li>
+		    </ul>
+
+	    </div>
+
+	    <div class="step">
+		    <h1 class="red">03</h1>
+		    <h2 class="line-height-one-five">
+			    Exemplary data model for archaeological catalogue data
+		    </h2>
+	    </div>
+	    
+	    <div class="step">
+		    
+		    <figure>
+			    <img style="width: 90%;" src="resources/img/datamodel.jpg">
+		    </figure>
+		    
+	    </div>
+	    
+	    <div class="step">
+		    
+		    <h2>Example: Grave A of Künzing, Lkr. Deggendorf, Lower Bavaria</h2>
+		    
+		    <figure class="mfp-lightbox">
+			    <a href="resources/img/datamodel-example.jpg"><img style="width: 90%" src="resources/img/datamodel-example.jpg"></a>
+		    </figure>
+		    
+	    </div>
+
+	    <div class="step">
+		    <h1 class="red">04</h1>
+		    <h2 class="line-height-one-five">
+			    Conclusions and Outlook
+		    </h2>
+	    </div>
+
+	    <div class="step">
+
+		    <h2>Benefits of CIDOC CRM-based data models</h2>
+
+		    <ul class="medium">
+			    <li>Growing importance of the CRM especially in the context of LOD requires discussion about modeling approaches in different areas of archaeological research</li>
+			    <li>Publication of well-structured data facilitates discussion about and sharing of research data</li>
+			    <li>Modeling process
+				    <ul>
+					    <li>can lead to a deeper structural understanding of the study subject and result in new ideas and perspectives</li>
+					    <li>can expose gaps and biases and make them explicit and verifiable</li>
+					    <li>strengthens inferences drawn from the data</li>
+				    </ul>
+			    </li>
+			    <li class="down-25">The model presented
+				    <ul>
+					    <li>gives researchers dealing with archaeological catalogue data a starting point to create data models for their respective domains</li>
+					    <li>proposes a way of modeling several key concepts common to archaeological research</li>
+				    </ul>
+			    </li>
+		    </ul>
+
+	    </div>
+
+	    <div class="step">
+
+		    <h2>Next steps</h2>
+
+		    <p>Further efforts at refining the model include among others:</p>
+
+		    <ul>
+			    <li>positioning of objects (E19, E21, E20, E22, E25) in relation to each other</li>
+			    <li>exploration of more complicated patterns of deposition</li>
+			    <li>documentation of the reasoning behind decisions about chronological or typological classifications (<a href="http://www.cidoc-crm.org/crminf/">CRMinf</a>?)</li>
+			    <li>possibilities of assigning cultural affiliations to entities</li>
+		    </ul>
+
+	    </div>
+
+        <div class="step">
+            <div class="centered">
+                <h1>F I N I S</h1>
+                <h2>Thank you</h2>
+
+	            <div class="small down-50">
+		            <p>
+			            <a href="#">
+				            Link to presentation
+			            </a>
+		            <br>
+			            License: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, Aline Deicke
+		            </p>
+	            </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jquery -->
+    <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+    <!-- chartist -->
+    <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+    <script src="resources/js/chartist.charts.js"></script>
+
+    <!-- codemirror -->
+    <script src="vendor/codemirror/lib/codemirror.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("sparql"), {
+            mode: "application/sparql-query",
+            matchBrackets: true,
+            lineNumbers: true,
+            viewportMargin: Infinity
+        });
+    </script>
+
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="resources/js/hljs.linenumbering.js"></script>
+
+    <!-- magnific popup -->
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+    <script src="resources/js/magnific-popup.lightbox.js"></script>
+
+    <!-- impress.mod.js -->
+    <script src="vendor/impress/impress.fork.js"></script>
+    <script src="vendor/impress/impress-slidenum.js"></script>
+    <script>
+        var obj = impress();
+        obj.init();
+        initSlideNo(obj);
+    </script>
+
+</body>
+</html>
