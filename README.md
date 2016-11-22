@@ -8,6 +8,6 @@ Description
 
 The code of this presentation is at https://github.com/digicademy/2016-DHC-goettingen
 
-A live demo can be found at http://digicademy.github.io/impress-js-boilerplate/ 
+A live demo can be found at https://digicademy.github.io/2016-DHC-goettingen/
 
 Released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), [Aline Deicke](http://www.adwmainz.de/mitarbeiter/profil/aline-deicke.html)
