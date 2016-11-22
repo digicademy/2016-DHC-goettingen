@@ -4,7 +4,7 @@
 
 ### Aline Deicke
 
-Description
+Presentation at the 2016 workshop "Digital Humanities and Digital Curation (DHC)" in Göttingen.
 
 The code of this presentation is at https://github.com/digicademy/2016-DHC-goettingen
 
